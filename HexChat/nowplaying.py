@@ -26,17 +26,20 @@ def print_nowplaying(mp, echo=False):
 		title = metadata['xesam:title']
 		artist = metadata['xesam:artist'][0]
 		album = metadata['xesam:album']
+		title.encode('utf-8')
+		artist.encode('utf-8')
+		album.encode('utf-8)
 	except KeyError:
 		print('NP: Song info not found.')
 		return
 
 	# TODO: Settings for these
 	if echo:
-		cmd = 'echo NP: {} by {} on {}.'.format(title, artist, album)
+		cmd = u'echo NP: {} by {} on {}.'.format(title, artist, album)
 	elif hexchat.get_pluginpref('np_say'):
-		cmd = 'say Now playing {} by {} on {}.'.format(title, artist, album)
+		cmd = u'say Now playing {} by {} on {}.'.format(title, artist, album)
 	else:
-		cmd = 'me is now playing {} by {} on {}.'.format(title, artist, album)
+		cmd = u'me is now playing {} by {} on {}.'.format(title, artist, album)
 
 	hexchat.command(cmd)
 
