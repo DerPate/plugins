@@ -35,11 +35,11 @@ def print_nowplaying(mp, echo=False):
 
 	# TODO: Settings for these
 	if echo:
-		cmd = u'echo NP: {} by {} on {}.'.format(title, artist, album)
+		cmd = u"echo NP: {} by {} on {}.".format(title, artist, album)
 	elif hexchat.get_pluginpref('np_say'):
-		cmd = u'say Now playing {} by {} on {}.'.format(title, artist, album)
+		cmd = u"say Now playing {} by {} on {}.".format(title, artist, album)
 	else:
-		cmd = u'me is now playing {} by {} on {}.'.format(title, artist, album)
+		cmd = u"me is now playing {} by {} on {}.".format(title, artist, album)
 
 	hexchat.command(cmd)
 
